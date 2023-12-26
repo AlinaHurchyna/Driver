@@ -10,7 +10,7 @@
     </parent>
     <groupId>Alina_Hurchyna_AH</groupId>
     <artifactId>Driver</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     <name>Driver</name>
     <description>Driver</description>
     <properties>
@@ -26,6 +26,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>6.0.13</version>
         </dependency>
     </dependencies>
 
