@@ -1,4 +1,4 @@
-package alina_hurchyna_ah.driver;
+package alina.hurchyna.ah.driver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
