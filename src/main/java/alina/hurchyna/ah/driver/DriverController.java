@@ -1,4 +1,4 @@
-package alina.hurchyna.ah.driver.Controller;
+package alina.hurchyna.ah.driver;
 
 import alina.hurchyna.ah.driver.Repository.DriverRepository;
 import alina.hurchyna.ah.driver.model.Driver;
