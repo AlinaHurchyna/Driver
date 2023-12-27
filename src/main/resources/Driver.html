@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Client Login</title>
+    <title>Driver Registration</title>
 
     <style>
         body {
@@ -23,13 +23,6 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        h2 {
-            text-align: center;
         }
 
         label {
@@ -61,17 +54,30 @@
 </head>
 <body>
 
-<h2>Client Login</h2>
+<h2>Driver Registration</h2>
 
-<form th:action="@{/login}" method="post">
+<form action="/driver/register" method="post">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required>
+
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required>
 
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
 
-    <button type="submit">Login</button>
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+    <label for="available">Available:</label>
+    <input type="checkbox" id="available" name="available" checked>
+
+    <button type="submit">Register</button>
 </form>
 
 </body>
 </html>
+
