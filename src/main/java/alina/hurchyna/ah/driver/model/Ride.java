@@ -1,10 +1,10 @@
 package alina.hurchyna.ah.driver.model;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Objects;
 
 @Entity
 public class Ride {
@@ -18,7 +18,16 @@ public class Ride {
     private String destination;
     private boolean paymentByCard;
 
-    // Getters and setters (automatically generated or manually implemented)
+    public Ride(Long driverId, String clientName, String destination, boolean paymentByCard) {
+        this.driverId = driverId;
+        this.clientName = clientName;
+        this.destination = destination;
+        this.paymentByCard = paymentByCard;
+    }
+
+    public Ride() {
+
+    }
 
     public Long getId() {
         return id;
@@ -59,8 +68,37 @@ public class Ride {
     public void setPaymentByCard(boolean paymentByCard) {
         this.paymentByCard = paymentByCard;
     }
-}
 
+    // Equals, hashCode, toString
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ride ride = (Ride) o;
+        return paymentByCard == ride.paymentByCard &&
+                Objects.equals(id, ride.id) &&
+                Objects.equals(driverId, ride.driverId) &&
+                Objects.equals(clientName, ride.clientName) &&
+                Objects.equals(destination, ride.destination);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, driverId, clientName, destination, paymentByCard);
+    }
+
+    @Override
+    public String toString() {
+        return "Ride{" +
+                "id=" + id +
+                ", driverId=" + driverId +
+                ", clientName='" + clientName + '\'' +
+                ", destination='" + destination + '\'' +
+                ", paymentByCard=" + paymentByCard +
+                '}';
+    }
+}
 
 
 

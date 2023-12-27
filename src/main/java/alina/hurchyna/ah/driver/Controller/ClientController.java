@@ -1,55 +1,56 @@
 package alina.hurchyna.ah.driver.Controller;
 
+import alina.hurchyna.ah.driver.Service.ClientLoginForm;
+import alina.hurchyna.ah.driver.Service.ClientRegistrationForm;
+import alina.hurchyna.ah.driver.Service.RideBookingForm;
+import ch.qos.logback.core.model.Model;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/client")
 public class ClientController {
 
-    @GetMapping("/client/register")
-    public String clientRegisterForm() {
+    @GetMapping("/register")
+    public String showClientRegisterForm(Model model) {
         return "client_register";
     }
 
-    @PostMapping("/client/register")
-    public String processClientRegistration(/* Dodaj parametry z formularza rejestracji */) {
-
+    @PostMapping("/register")
+    public String processClientRegistration(@ModelAttribute ClientRegistrationForm form) {
         return "redirect:/client/login";
     }
 
-    @GetMapping("/client/login")
-    public String clientLoginForm() {
+    @GetMapping("/login")
+    public String showClientLoginForm() {
         return "client_login";
     }
 
-    @PostMapping("/client/login")
-    public String processClientLogin(/* Dodaj parametry z formularza logowania */) {
-
+    @PostMapping("/login")
+    public String processClientLogin(@ModelAttribute ClientLoginForm form) {
         return "redirect:/client/dashboard";
     }
 
-    @GetMapping("/client/dashboard")
-    public String clientDashboard(Model model) {
-
+    @GetMapping("/dashboard")
+    public String showClientDashboard(Model model) {
         return "client_dashboard";
     }
 
-    @GetMapping("/client/book-ride")
-    public String bookRideForm(Model model) {
-
+    @GetMapping("/book-ride")
+    public String showBookRideForm(Model model) {
         return "book_ride";
     }
 
-    @PostMapping("/client/book-ride")
-    public String processRideBooking(/* Dodaj parametry z formularza zamówienia przejazdu */) {
-
+    @PostMapping("/book-ride")
+    public String processRideBooking(@ModelAttribute RideBookingForm form) {
         return "redirect:/client/dashboard";
     }
 
-    @GetMapping("/client/ride-history")
-    public String rideHistory(Model model) {
+    @GetMapping("/ride-history")
+    public String showRideHistory(Model model) {
         return "ride_history";
     }
 }
