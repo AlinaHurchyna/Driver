@@ -25,6 +25,5 @@ public class Driver {
         return name;
     }
 
-    // Getters and setters
 }
 

@@ -16,7 +16,6 @@ public class Ride {
     private String startLocation;
     private String endLocation;
 
-    // konstruktory, gettery i settery
 
     public Long getId() {
         return id;
@@ -41,6 +40,7 @@ public class Ride {
     public void setEndLocation(String endLocation) {
         this.endLocation = endLocation;
     }
+
 }
 
 
