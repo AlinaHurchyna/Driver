@@ -13,35 +13,13 @@ public class Ride {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String startLocation;
-    private String endLocation;
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getStartLocation() {
-        return startLocation;
-    }
-
-    public void setStartLocation(String startLocation) {
-        this.startLocation = startLocation;
-    }
-
-    public String getEndLocation() {
-        return endLocation;
-    }
-
-    public void setEndLocation(String endLocation) {
-        this.endLocation = endLocation;
-    }
-
+    private Long driverId;
+    private String clientName;
+    private String destination;
+    private boolean paymentByCard;
 }
+
+
 
 
 
