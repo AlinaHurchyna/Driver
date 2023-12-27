@@ -57,7 +57,17 @@
             <artifactId>spring-data-jpa</artifactId>
             <version>3.1.5</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>24.1.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>5.7.6</version>
+        </dependency>
 
     </dependencies>
 

@@ -3,7 +3,16 @@ package alina.hurchyna.ah.driver.Repository;
 import alina.hurchyna.ah.driver.model.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ClientRepository extends JpaRepository<Client, Long> {
+import java.util.List;
 
-    Client findByUsername(String username);
+public abstract class ClientRepository implements JpaRepository<Client, Long> {
+
+    public abstract Client findByUsername(String username);
+
+    public abstract Client findByUsernameAndPassword(String username, String password);
+
+    public abstract List<Client> findByFirstName(String firstName);
+
+    public abstract List<Client> findByUsernameContaining(String partialUsername);
+
 }
