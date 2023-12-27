@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Ride</title>
 
-    <!-- Dodaj AngularJS -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 
     <!-- Dodaj styl CSS -->
@@ -69,7 +69,7 @@
 
 <h2>Order Ride</h2>
 
-<!-- Formularz Angulara -->
+
 <form ng-submit="orderRide()">
     <img src="path/to/your/image.jpg" alt="Car Image" width="150">
     <label for="clientName">Client Name:</label>
@@ -84,7 +84,7 @@
     <button type="submit">Order Ride</button>
 </form>
 
-<!-- Wynik zamówienia -->
+
 <div ng-show="orderComplete">
     <h3>Order Complete</h3>
     <p>Client Name: {{ ride.clientName }}</p>
@@ -92,7 +92,7 @@
     <p>Payment by Card: {{ ride.paymentByCard ? 'Yes' : 'No' }}</p>
 </div>
 
-<!-- Dodaj AngularJS Controller -->
+
 <script>
     var app = angular.module('myApp', []);
     app.controller('myCtrl', function ($scope, $http) {
