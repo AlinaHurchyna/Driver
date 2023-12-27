@@ -96,16 +96,13 @@
 <script>
     var app = angular.module('myApp', []);
     app.controller('myCtrl', function ($scope, $http) {
-        // Początkowe wartości
+
         $scope.ride = {};
         $scope.orderComplete = false;
 
-        // Funkcja zamówienia przejazdu
-        $scope.orderRide = function () {
-            // Tutaj możesz użyć $http, aby wysłać żądanie do serwera Spring Boot
-            // i przekazać dane o przejeździe
 
-            // Przykładowe dane zamówienia
+        $scope.orderRide = function () {
+
             $scope.orderComplete = true;
         };
     });
