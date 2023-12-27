@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import java.util.Objects;
 
 @Entity
@@ -19,8 +20,9 @@ public class Driver {
     private String username;
     private String password;
     private boolean available;
+    @OneToOne
+    private RideOrder currentRideOrder;
 
-    // Constructors
     public Driver() {
     }
 
@@ -29,7 +31,7 @@ public class Driver {
         this.lastName = lastName;
         this.username = username;
         this.password = password;
-        this.available = available;
+        this.available = true;
     }
 
     // Getters and setters

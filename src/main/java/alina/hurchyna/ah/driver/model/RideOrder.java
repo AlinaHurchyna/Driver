@@ -17,14 +17,18 @@ public class RideOrder {
     private Long clientId;
     private String startLocation;
     private String destination;
+    private String status;
+
 
     public RideOrder() {
+
     }
 
     public RideOrder(Long clientId, String startLocation, String destination) {
         this.clientId = clientId;
         this.startLocation = startLocation;
         this.destination = destination;
+        this.status = "Pending"; // Set default status to "Pending"
     }
 
 
@@ -59,21 +63,26 @@ public class RideOrder {
     public void setDestination(String destination) {
         this.destination = destination;
     }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
     
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         RideOrder rideOrder = (RideOrder) o;
-        return Objects.equals(id, rideOrder.id) &&
-                Objects.equals(clientId, rideOrder.clientId) &&
-                Objects.equals(startLocation, rideOrder.startLocation) &&
-                Objects.equals(destination, rideOrder.destination);
+        return Objects.equals(id, rideOrder.id) && Objects.equals(clientId, rideOrder.clientId) && Objects.equals(startLocation, rideOrder.startLocation) && Objects.equals(destination, rideOrder.destination) && Objects.equals(status, rideOrder.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, clientId, startLocation, destination);
+        return Objects.hash(id, clientId, startLocation, destination, status);
     }
 
     @Override
@@ -83,6 +92,7 @@ public class RideOrder {
                 ", clientId=" + clientId +
                 ", startLocation='" + startLocation + '\'' +
                 ", destination='" + destination + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

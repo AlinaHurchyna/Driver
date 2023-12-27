@@ -66,8 +66,15 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
-            <version>5.7.6</version>
+            <version>6.2.0</version>
         </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version> <!-- Use the latest version available -->
+            <scope>provided</scope>
+        </dependency>
+
 
     </dependencies>
 
