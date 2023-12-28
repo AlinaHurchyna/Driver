@@ -53,4 +53,9 @@ public class ClientController {
     public String showRideHistory(Model model) {
         return "ride_history";
     }
+
+    public LocationUpdate trackDriver(@DestinationVariable String driverUsername) {
+        // Tutaj możesz dodać logikę obsługi śledzenia kierowcy przez klienta
+        return new LocationUpdate(0.0, 0.0); // Domyślna lokalizacja
+    }
 }

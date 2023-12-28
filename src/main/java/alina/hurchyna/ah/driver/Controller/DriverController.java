@@ -5,9 +5,7 @@ import alina.hurchyna.ah.driver.model.Driver;
 import ch.qos.logback.core.model.Model;
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/drivers")
@@ -40,5 +38,11 @@ public class DriverController {
         driver.setAvailable(!driver.isAvailable());
         driverRepository.save(driver);
         return "redirect:/dashboard";
+    }
+    @PostMapping("/updateLocation")
+    public void updateLocation(@RequestParam String driverUsername,
+                               @RequestParam double latitude,
+                               @RequestParam double longitude) {
+
     }
 }
