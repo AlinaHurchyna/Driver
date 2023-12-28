@@ -29,7 +29,6 @@ public class DriverController {
     @GetMapping("/dashboard")
     public String dashboard(Authentication authentication, Model model) {
         String username = authentication.name();
-        driverRepository.findByUsername(username);
         model.addText("driver");
         return "dashboard";
     }

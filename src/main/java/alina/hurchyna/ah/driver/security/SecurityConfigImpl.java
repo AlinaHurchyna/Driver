@@ -6,6 +6,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+@SuppressWarnings({"removal", "deprecation"})
 public abstract class SecurityConfigImpl implements SecurityConfig {
     @Override
     public void configure(HttpSecurity http) throws Exception {
