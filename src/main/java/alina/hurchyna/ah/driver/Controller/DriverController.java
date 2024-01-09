@@ -3,21 +3,25 @@ package alina.hurchyna.ah.driver.Controller;
 import alina.hurchyna.ah.driver.Repository.DriverRepository;
 import alina.hurchyna.ah.driver.model.Driver;
 import ch.qos.logback.core.model.Model;
+import jakarta.persistence.EntityManagerFactory;
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.sql.DataSource;
 
 @RestController
 @RequestMapping("/api/drivers")
 public class DriverController {
 
+
+    private EntityManagerFactory entityManagerFactory;
     private final DriverRepository driverRepository;
 
     @Autowired
     public DriverController(DriverRepository driverRepository) {
         this.driverRepository = driverRepository;
     }
-
 
     @GetMapping("/login")
     public String login() {
