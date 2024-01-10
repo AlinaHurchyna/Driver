@@ -5,14 +5,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public abstract class ClientRepository implements JpaRepository<Client, Long> {
+public interface ClientRepository extends JpaRepository<Client, Long> {
 
-    public abstract Client findByUsername(String username);
+    Client findByUsername(String username);
 
-    public abstract Client findByUsernameAndPassword(String username, String password);
+    Client findByUsernameAndPassword(String username, String password);
 
-    public abstract List<Client> findByFirstName(String firstName);
+    List<Client> findByFirstName(String firstName);
 
-    public abstract List<Client> findByUsernameContaining(String partialUsername);
+    List<Client> findByUsernameContaining(String partialUsername);
 
 }
