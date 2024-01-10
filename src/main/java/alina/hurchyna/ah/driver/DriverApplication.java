@@ -1,19 +1,17 @@
 package alina.hurchyna.ah.driver;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackages = "alina.hurchyna.ah.driver.repository")
-
+@EntityScan("alina.hurchyna.ah.driver.model")
 public class DriverApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DriverApplication.class, args);
     }
 }
+
 
 
 

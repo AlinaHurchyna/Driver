@@ -57,4 +57,7 @@ public class RideOrder {
     public String toString() {
         return "RideOrder{" + "id=" + id + ", destination='" + destination + '\'' + '}';
     }
+
+    public void setStatus(String status) {
+    }
 }
