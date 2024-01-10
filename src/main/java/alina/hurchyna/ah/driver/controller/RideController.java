@@ -1,4 +1,4 @@
-package alina.hurchyna.ah.driver.Controller;
+package alina.hurchyna.ah.driver.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackages = "alina.hurchyna.ah.driver.Repository")
+@EnableJpaRepositories(basePackages = "alina.hurchyna.ah.driver.repository")
 
 public class DriverApplication {
 

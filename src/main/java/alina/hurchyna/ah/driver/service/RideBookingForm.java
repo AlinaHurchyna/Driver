@@ -1,4 +1,4 @@
-package alina.hurchyna.ah.driver.Service;
+package alina.hurchyna.ah.driver.service;
 
 public class RideBookingForm {
 

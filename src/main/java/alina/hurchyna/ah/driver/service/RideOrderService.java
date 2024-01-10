@@ -1,7 +1,7 @@
-package alina.hurchyna.ah.driver.Service;
+package alina.hurchyna.ah.driver.service;
 
 
-import alina.hurchyna.ah.driver.Repository.RideOrderRepository;
+import alina.hurchyna.ah.driver.repository.RideOrderRepository;
 import alina.hurchyna.ah.driver.model.RideOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

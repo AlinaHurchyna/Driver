@@ -1,4 +1,4 @@
-package alina.hurchyna.ah.driver.Controller;
+package alina.hurchyna.ah.driver.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

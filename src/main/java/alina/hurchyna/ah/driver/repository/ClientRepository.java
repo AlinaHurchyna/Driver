@@ -1,4 +1,4 @@
-package alina.hurchyna.ah.driver.Repository;
+package alina.hurchyna.ah.driver.repository;
 
 import alina.hurchyna.ah.driver.model.Client;
 import org.springframework.data.jpa.repository.JpaRepository;

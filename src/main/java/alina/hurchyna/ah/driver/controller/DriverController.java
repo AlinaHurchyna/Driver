@@ -1,6 +1,6 @@
-package alina.hurchyna.ah.driver.Controller;
+package alina.hurchyna.ah.driver.controller;
 
-import alina.hurchyna.ah.driver.Repository.DriverRepository;
+import alina.hurchyna.ah.driver.repository.DriverRepository;
 import alina.hurchyna.ah.driver.model.Driver;
 import ch.qos.logback.core.model.Model;
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;

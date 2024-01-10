@@ -1,6 +1,6 @@
-package alina.hurchyna.ah.driver.Controller;
+package alina.hurchyna.ah.driver.controller;
 
-import alina.hurchyna.ah.driver.Service.RideOrderService;
+import alina.hurchyna.ah.driver.service.RideOrderService;
 import alina.hurchyna.ah.driver.model.RideOrder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;

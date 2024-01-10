@@ -1,9 +1,9 @@
-package alina.hurchyna.ah.driver.Controller;
+package alina.hurchyna.ah.driver.controller;
 
-import alina.hurchyna.ah.driver.Service.ClientLoginForm;
-import alina.hurchyna.ah.driver.Service.ClientRegistrationForm;
-import alina.hurchyna.ah.driver.Service.RideBookingForm;
-import ch.qos.logback.core.model.Model;
+
+import alina.hurchyna.ah.driver.service.ClientLoginForm;
+import alina.hurchyna.ah.driver.service.ClientRegistrationForm;
+import alina.hurchyna.ah.driver.service.RideBookingForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ClientController {
 
     @GetMapping("/register")
-    public String showClientRegisterForm(Model model) {
+    public String showClientRegisterForm() {
         return "client_register";
     }
 
@@ -35,12 +35,12 @@ public class ClientController {
     }
 
     @GetMapping("/dashboard")
-    public String showClientDashboard(Model model) {
+    public String showClientDashboard() {
         return "client_dashboard";
     }
 
     @GetMapping("/book-ride")
-    public String showBookRideForm(Model model) {
+    public String showBookRideForm() {
         return "book_ride";
     }
 
@@ -50,9 +50,7 @@ public class ClientController {
     }
 
     @GetMapping("/ride-history")
-    public String showRideHistory(Model model) {
+    public String showRideHistory() {
         return "ride_history";
     }
-
-
 }
