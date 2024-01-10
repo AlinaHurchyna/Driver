@@ -11,13 +11,13 @@ public class RideController {
 
     @GetMapping("/order")
     public String orderRideForm(Model model) {
-        // Wyświetl formularz zamawiania przejazdu
+
         return "order_Ride";
     }
 
     @PostMapping("/order")
     public String orderRide() {
-        // Zapisz zamówienie przejazdu do bazy danych
+
         return "redirect:/dashboard";
     }
 }
