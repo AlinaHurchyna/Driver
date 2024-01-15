@@ -19,12 +19,7 @@ public class RideOrderController {
         this.rideOrderService = rideOrderService;
     }
 
-    /**
-     * Obsługuje odrzucanie zamówienia przejazdu.
-     *
-     * @param orderId ID zamówienia przejazdu, które ma zostać odrzucone.
-     * @return ResponseEntity wskazujący na powodzenie odrzucenia.
-     */
+
     @PostMapping("/reject/{orderId}")
     public ResponseEntity<String> rejectRideOrder(@PathVariable Long orderId) {
 
