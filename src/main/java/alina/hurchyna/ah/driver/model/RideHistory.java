@@ -1,5 +1,8 @@
 package alina.hurchyna.ah.driver.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,6 +10,8 @@ import javax.persistence.Id;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Getter
+@Setter
 @Entity
 public class RideHistory {
 
@@ -32,47 +37,6 @@ public class RideHistory {
     }
 
 
-    public Long getId() {
-        return id;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public Long getRideId() {
-        return rideId;
-    }
-
-    public LocalDateTime getRideDate() {
-        return rideDate;
-    }
-
-    public boolean isCompleted() {
-        return completed;
-    }
-
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public void setRideId(Long rideId) {
-        this.rideId = rideId;
-    }
-
-    public void setRideDate(LocalDateTime rideDate) {
-        this.rideDate = rideDate;
-    }
-
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
-    }
-    
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

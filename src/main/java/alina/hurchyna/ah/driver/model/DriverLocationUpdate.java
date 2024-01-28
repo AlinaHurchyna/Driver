@@ -1,22 +1,16 @@
 package alina.hurchyna.ah.driver.model;
 
-
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Objects;
 
-@Setter
 @Getter
+@Setter
 public class DriverLocationUpdate {
     private Long driverId;
     private double latitude;
     private double longitude;
-
-
-
-    public DriverLocationUpdate() {
-    }
 
     public DriverLocationUpdate(Long driverId, double latitude, double longitude) {
         this.driverId = driverId;
@@ -24,6 +18,8 @@ public class DriverLocationUpdate {
         this.longitude = longitude;
     }
 
+    public DriverLocationUpdate() {
+    }
 
     // hashCode, equals, toString
 

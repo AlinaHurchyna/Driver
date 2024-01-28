@@ -2,19 +2,17 @@ package alina.hurchyna.ah.driver.controller;
 
 import alina.hurchyna.ah.driver.repository.DriverRepository;
 import alina.hurchyna.ah.driver.model.Driver;
-import ch.qos.logback.core.model.Model;
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-
+import org.springframework.ui.Model;
 
 @RestController
 @RequestMapping("/api/drivers")
 public class DriverController {
 
-
     private final DriverRepository driverRepository;
+    private String driverUsername;
 
     @Autowired
     public DriverController(DriverRepository driverRepository) {
@@ -27,8 +25,8 @@ public class DriverController {
     }
 
     @GetMapping("/dashboard")
-    public String dashboard(Authentication authentication, Model model) {
-        model.addText("driver");
+    public String dashboard(Model model) {
+        model.addAttribute("driver");
         return "dashboard";
     }
 
@@ -40,10 +38,12 @@ public class DriverController {
         driverRepository.save(driver);
         return "redirect:/dashboard";
     }
+
     @PostMapping("/updateLocation")
     public void updateLocation(@RequestParam String driverUsername,
                                @RequestParam double ignoredLatitude,
                                @RequestParam double ignoredLongitude) {
-
+        // Implementacja aktualizacji lokalizacji
+        this.driverUsername = driverUsername;
     }
 }

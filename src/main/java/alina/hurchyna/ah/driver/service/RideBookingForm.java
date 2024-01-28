@@ -1,5 +1,10 @@
 package alina.hurchyna.ah.driver.service;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class RideBookingForm {
 
     private String clientName;
@@ -12,27 +17,4 @@ public class RideBookingForm {
         this.paymentByCard = paymentByCard;
     }
 
-    public String getClientName() {
-        return clientName;
-    }
-
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
-    }
-
-    public String getDestination() {
-        return destination;
-    }
-
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
-
-    public boolean isPaymentByCard() {
-        return paymentByCard;
-    }
-
-    public void setPaymentByCard(boolean paymentByCard) {
-        this.paymentByCard = paymentByCard;
-    }
 }

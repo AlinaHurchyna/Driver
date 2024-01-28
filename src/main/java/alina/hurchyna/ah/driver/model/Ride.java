@@ -1,11 +1,16 @@
 package alina.hurchyna.ah.driver.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Objects;
 
+@Getter
+@Setter
 @Entity
 public class Ride {
 
@@ -29,47 +34,6 @@ public class Ride {
 
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getDriverId() {
-        return driverId;
-    }
-
-    public void setDriverId(Long driverId) {
-        this.driverId = driverId;
-    }
-
-    public String getClientName() {
-        return clientName;
-    }
-
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
-    }
-
-    public String getDestination() {
-        return destination;
-    }
-
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
-
-    public boolean isPaymentByCard() {
-        return paymentByCard;
-    }
-
-    public void setPaymentByCard(boolean paymentByCard) {
-        this.paymentByCard = paymentByCard;
-    }
-
-    // Equals, hashCode, toString
 
     @Override
     public boolean equals(Object o) {

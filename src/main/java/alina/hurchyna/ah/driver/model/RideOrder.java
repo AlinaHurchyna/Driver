@@ -1,12 +1,17 @@
 package alina.hurchyna.ah.driver.model;
 
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Objects;
 
+@Setter
+@Getter
 @Entity
 public class RideOrder {
 
@@ -23,22 +28,6 @@ public class RideOrder {
         this.destination = destination;
     }
 
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDestination() {
-        return destination;
-    }
-
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
 
     @Override
     public boolean equals(Object o) {
