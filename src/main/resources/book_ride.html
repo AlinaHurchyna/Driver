@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book a Ride</title>
+    <title>Zamów Przejazd</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,21 +40,25 @@
         button:hover {
             background-color: #45a049;
         }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
     </style>
 </head>
 <body>
-<h1>Book a Ride</h1>
+<h1>Zamów Przejazd</h1>
 
-<form action="/order-ride" method="post">
-    <label for="startingLocation">Starting Location:</label>
+<form action="/zamow-przejazd" method="post">
+    <label for="startingLocation">Miejsce Początkowe:</label>
     <input type="text" id="startingLocation" name="startingLocation" required>
 
-    <label for="destination">Destination:</label>
+    <label for="destination">Cel:</label>
     <input type="text" id="destination" name="destination" required>
 
-    <button type="submit">Book Ride</button>
+    <button type="submit">Zamów Przejazd</button>
 </form>
 </body>
 </html>
-
 
