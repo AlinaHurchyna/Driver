@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja klienta</title>
+    <link rel="stylesheet" href="/css/style.css"> <!-- Dodaj ścieżkę do Twojego arkusza stylów CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            color: #333333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<h2>Rejestracja klienta</h2>
+<form action="#" th:action="@{/client_register.html}" th:object="${clientRegistrationForm}" method="post">
+    <label for="name">Imię</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Imię">
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+
+    <label for="email">Email</label>
+    <input type="text" th:field="*{email}" id="email" placeholder="Email">
+    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+
+    <label for="password">Hasło</label>
+    <input type="password" th:field="*{password}" id="password" placeholder="Hasło">
+    <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+
+    <input type="submit" value="Zarejestruj">
+</form>
+</body>
+</html>
+
+

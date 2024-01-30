@@ -16,7 +16,7 @@ public class ClientController {
 
     @GetMapping("/register")
     public String showClientRegisterForm() {
-        return "client_register";
+        return "redirect:/client/register";
     }
 
     @PostMapping("/register")
@@ -53,4 +53,5 @@ public class ClientController {
     public String showRideHistory() {
         return "ride_history";
     }
+
 }
