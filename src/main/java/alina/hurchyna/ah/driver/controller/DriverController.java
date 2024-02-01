@@ -75,5 +75,4 @@ public class DriverController {
         return "redirect:/driver/accepted-rides";
     }
 
-    // ... Pozostałe metody kontrolera
 }
