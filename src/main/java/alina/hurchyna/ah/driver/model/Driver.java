@@ -25,16 +25,16 @@ public class Driver {
     private String password;
     private boolean available;
 
-    private String email; // Moved email here
+    private String email;
 
     @OneToOne
     private RideOrder currentRideOrder;
 
     public Driver() {
-        // Default constructor
+
     }
 
-    // Constructor with basic fields
+
     public Driver(String firstName, String lastName, String username, String password, boolean available, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -44,7 +44,6 @@ public class Driver {
         this.email = email;
     }
 
-    // Getters, setters, equals, hashCode, toString methods...
 
     @Override
     public boolean equals(Object o) {

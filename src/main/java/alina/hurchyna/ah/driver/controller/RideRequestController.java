@@ -22,20 +22,18 @@ public class RideRequestController {
 
     @GetMapping("/available")
     public List<RideRequest> getAvailableRides() {
-        // Pobieranie dostępnych zgłoszeń
+
         return rideRequestRepository.findByStatus(RideStatus.AVAILABLE);
     }
 
     @PostMapping("/accept")
     public void acceptRide(@RequestParam Long rideId) {
-        // Akceptacja zgłoszenia przejazdu
         RideRequest rideRequest = rideRequestRepository.findById(rideId).orElse(null);
         if (rideRequest != null) {
             rideRequest.setStatus(RideStatus.IN_PROGRESS);
             rideRequestRepository.save(rideRequest);
         }
-        // Dodatkowe logiki związane z akceptacją przejazdu
+
     }
 
-    // Inne metody związane z obsługą zgłoszeń przejazdów
 }

@@ -10,6 +10,6 @@ public class MyController {
 
     @GetMapping("/home")
     public String home() {
-        return "home"; // Zakładam, że masz plik widoku o nazwie "home.jsp" w katalogu "/WEB-INF/views/"
+        return "home";
     }
 }
