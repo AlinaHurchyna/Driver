@@ -1,18 +1,22 @@
 package alina.hurchyna.ah.driver.controller;
 
-
+import alina.hurchyna.ah.driver.model.RideRequest;
 import alina.hurchyna.ah.driver.service.ClientLoginForm;
 import alina.hurchyna.ah.driver.service.ClientRegistrationForm;
 import alina.hurchyna.ah.driver.service.RideBookingForm;
+import alina.hurchyna.ah.driver.service.RideService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/client")
 public class ClientController {
+
+    private final RideService rideService;
+
+    public ClientController(RideService rideService) {
+        this.rideService = rideService;
+    }
 
     @GetMapping("/register")
     public String showClientRegisterForm() {
@@ -54,4 +58,17 @@ public class ClientController {
         return "ride_history";
     }
 
+    @PostMapping("/request-ride")
+    public String requestRide(@RequestParam String startLocation,
+                              @RequestParam String destination) {
+
+        RideRequest rideRequest = new RideRequest();
+        rideRequest.setStartLocation(startLocation);
+        rideRequest.setDestination(destination);
+
+        rideService.requestRide(rideRequest);
+
+        return "redirect:/client/available-rides";
+    }
 }
+
