@@ -1,16 +1,15 @@
 package alina.hurchyna.ah.driver.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping
-
+@Controller
+@RequestMapping("/api")
 public class MyController {
 
-    @GetMapping("/api/home")
+    @GetMapping("/home")
     public String home() {
-        return "Welcome to the home page!";
+        return "home"; // Zakładam, że masz plik widoku o nazwie "home.jsp" w katalogu "/WEB-INF/views/"
     }
 }
