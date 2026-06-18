@@ -136,24 +136,6 @@ Open: [http://localhost:8080](http://localhost:8080)
 
 ---
 
-## 📸 Screenshots
-
-### Client Dashboard — GPS + Map
-![Client Dashboard](docs/screenshots/client-dashboard.png)
-Dark dashboard with auto-detected location, address autocomplete, and interactive Leaflet map.
-
-### Driver Available Rides
-![Available Rides](docs/screenshots/available-rides.png)
-Ride cards with pickup/destination, Google Maps navigation button, and accept button.
-
-### Driver Navigation Page
-![Driver Navigation](docs/screenshots/driver-navigation.png)
-3-phase navigation flow: going to client → client boarded → destination reached.
-
-### Ride History
-![Ride History](docs/screenshots/ride-history.png)
-Client ride history showing completed and active rides with dates and addresses.
-
 ---
 
 ## 🧪 Tests
