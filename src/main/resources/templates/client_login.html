@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход клиента</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background: #f4f4f4; }
+        .form-box { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 320px; }
+        h2 { text-align: center; }
+        input { width: 100%; padding: 10px; margin: 8px 0; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        button { width: 100%; padding: 10px; background: #4caf50; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        button:hover { background: #45a049; }
+        .links { margin-top: 15px; text-align: center; }
+    </style>
+</head>
+<body>
+<div class="form-box">
+    <h2>Вход клиента</h2>
+    <form th:action="@{/client/login}" method="post">
+        <input type="text" name="username" placeholder="Логин" required/>
+        <input type="password" name="password" placeholder="Пароль" required/>
+        <button type="submit">Войти</button>
+    </form>
+    <div class="links">
+        <a href="/client/register">Зарегистрироваться</a> |
+        <a href="/home">На главную</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="#{nav.brand}">DRIVER</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/home" class="navbar-brand" th:text="#{nav.brand}">DRIVER</a>
+  <div class="navbar-links">
+    <a href="/client/register" th:text="#{nav.become.client}">Стать клиентом</a>
+    <a href="/driver/register" th:text="#{nav.become.driver}">Стать водителем</a>
+    <div class="lang-switcher">
+      <a th:href="@{/home(lang=ru)}" class="lang-btn" th:classappend="${#locale.language == 'ru'} ? 'active'">RU</a>
+      <a th:href="@{/home(lang=en)}" class="lang-btn" th:classappend="${#locale.language == 'en'} ? 'active'">EN</a>
+      <a th:href="@{/home(lang=pl)}" class="lang-btn" th:classappend="${#locale.language == 'pl'} ? 'active'">PL</a>
+      <a th:href="@{/home(lang=be)}" class="lang-btn" th:classappend="${#locale.language == 'be'} ? 'active'">BY</a>
+    </div>
+    <a href="/login" class="btn btn-primary btn-sm" th:text="#{nav.login}">Войти</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-bg-pattern"></div>
+  </div>
+  <div class="hero-content">
+    <h1 class="hero-title fade-up fade-up-1" th:text="#{hero.title}">Куда едем?</h1>
+    <p class="hero-subtitle fade-up fade-up-2" th:text="#{hero.subtitle}"></p>
+    <div class="hero-actions fade-up fade-up-3">
+      <a href="/client/register" class="btn btn-primary btn-lg" th:text="#{hero.btn.ride}">Заказать поездку</a>
+      <a href="/driver/register" class="btn btn-secondary btn-lg" th:text="#{hero.btn.driver}">Стать водителем</a>
+    </div>
+  </div>
+</section>
+
+<script th:src="@{/js/app.js}"></script>
+</body>
+</html>

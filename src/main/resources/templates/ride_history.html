@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>История поездок — Driver</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <style>
+    .ride-card-uber { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 18px; margin-bottom: 12px; }
+    .ride-address { font-size: 14px; color: var(--text-primary); font-weight: 500; }
+    .ride-address-label { font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px; }
+    hr.dashed { border: none; border-top: 1px dashed var(--border); margin: 10px 0; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="/home" class="navbar-brand">DRIVER</a>
+  <div class="navbar-links">
+    <div class="lang-switcher">
+      <a th:href="@{/client/ride-history(lang=ru)}" class="lang-btn" th:classappend="${#locale.language == 'ru'} ? 'active'">RU</a>
+      <a th:href="@{/client/ride-history(lang=en)}" class="lang-btn" th:classappend="${#locale.language == 'en'} ? 'active'">EN</a>
+      <a th:href="@{/client/ride-history(lang=pl)}" class="lang-btn" th:classappend="${#locale.language == 'pl'} ? 'active'">PL</a>
+      <a th:href="@{/client/ride-history(lang=be)}" class="lang-btn" th:classappend="${#locale.language == 'be'} ? 'active'">BY</a>
+    </div>
+    <a href="/client/dashboard" th:text="#{nav.back}">← Назад</a>
+    <form th:action="@{/logout}" method="post" style="display:inline"><input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/><button type="submit" class="btn btn-secondary btn-sm" th:text="#{nav.logout}">Выйти</button></form>
+  </div>
+</nav>
+
+<div class="dashboard">
+  <div class="dashboard-header fade-up fade-up-1">
+    <h1>📋 <span th:text="#{history.client.title}">История поездок</span></h1>
+    <p style="color:var(--text-secondary); margin-top:8px; font-size:16px;" th:text="#{history.client.subtitle}">Все ваши поездки</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="dashboard-grid fade-up fade-up-2" style="margin-bottom:16px;">
+    <div class="stat-card">
+      <div class="stat-icon stat-icon-green">🚗</div>
+      <div>
+        <div class="stat-label" th:text="#{history.total}">Всего поездок</div>
+        <div class="stat-value" th:text="${rides != null ? #lists.size(rides) : 0}">0</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Empty state -->
+  <div th:if="${rides == null or #lists.isEmpty(rides)}"
+       class="card fade-up fade-up-3" style="text-align:center; padding: 60px 24px;">
+    <div style="font-size: 4rem; margin-bottom: 20px;">🚗</div>
+    <h3 style="font-size: 1.3rem; margin-bottom: 10px;" th:text="#{rides.empty.title}">Пока нет поездок</h3>
+    <p style="color:var(--text-secondary); margin-bottom: 28px;" th:text="#{rides.empty.subtitle}">Закажите первую поездку и она появится здесь</p>
+    <a href="/client/dashboard" class="btn btn-success btn-lg" th:text="#{rides.book}">🗺️ Заказать поездку</a>
+  </div>
+
+  <!-- Rides list -->
+  <div th:each="ride, stat : ${rides}" th:if="${rides != null and not #lists.isEmpty(rides)}"
+       class="ride-card-uber fade-up"
+       th:style="'animation-delay:' + ${stat.index * 0.07} + 's;'">
+
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;">
+      <div style="font-size:12px; color:var(--text-secondary);">
+        🕐 <span th:text="${ride.rideDate != null} ? ${#temporals.format(ride.rideDate,'dd.MM.yyyy HH:mm')} : '—'">дата</span>
+      </div>
+      <span th:if="${ride.status != null and ride.status.name() == 'COMPLETED'}"
+            style="background:#0d2310;color:#06c167;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;" th:text="#{history.completed}">
+        Выполнено ✓
+      </span>
+      <span th:unless="${ride.status != null and ride.status.name() == 'COMPLETED'}"
+            style="background:#1a1a2e;color:#60a5fa;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;" th:text="${ride.status}">
+        Статус
+      </span>
+    </div>
+
+    <div style="display:flex; gap:12px; align-items:stretch;">
+      <div style="display:flex; flex-direction:column; align-items:center; padding-top:4px;">
+        <div style="width:10px;height:10px;border-radius:50%;background:#fff;border:2px solid #666;flex-shrink:0;"></div>
+        <div style="width:2px;flex:1;background:var(--border);margin:4px 0;min-height:20px;"></div>
+        <div style="width:10px;height:10px;border-radius:50%;background:#06c167;flex-shrink:0;"></div>
+      </div>
+      <div style="flex:1;">
+        <div class="ride-address-label" th:text="#{rides.from}">Откуда</div>
+        <div class="ride-address" th:text="${ride.startLocation}">—</div>
+        <hr class="dashed"/>
+        <div class="ride-address-label" th:text="#{rides.to}">Куда</div>
+        <div class="ride-address" th:text="${ride.destination}">—</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script th:src="@{/js/app.js}"></script>
+</body>
+</html>

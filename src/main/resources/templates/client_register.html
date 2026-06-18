@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="#{register.client.title}">Регистрация</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="auth-page">
+  <div class="auth-left">
+    <div style="text-align:center; max-width:360px;">
+      <div style="font-size:4rem; margin-bottom:24px;">📍</div>
+      <h2 style="font-size:1.8rem; font-weight:800; margin-bottom:12px;" th:text="#{hero.title}">Куда едем?</h2>
+      <p style="color:var(--text-secondary); font-size:15px; line-height:1.7;" th:text="#{register.client.left.text}"></p>
+    </div>
+  </div>
+
+  <div class="auth-right">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:32px;">
+      <div class="auth-logo" th:text="#{nav.brand}">DRIVER</div>
+      <div class="lang-switcher">
+        <a th:href="@{/client/register(lang=ru)}" class="lang-btn" th:classappend="${#locale.language == 'ru'} ? 'active'">RU</a>
+        <a th:href="@{/client/register(lang=en)}" class="lang-btn" th:classappend="${#locale.language == 'en'} ? 'active'">EN</a>
+        <a th:href="@{/client/register(lang=pl)}" class="lang-btn" th:classappend="${#locale.language == 'pl'} ? 'active'">PL</a>
+        <a th:href="@{/client/register(lang=be)}" class="lang-btn" th:classappend="${#locale.language == 'be'} ? 'active'">BY</a>
+      </div>
+    </div>
+
+    <h1 class="auth-title" th:text="#{register.client.title}">Создать аккаунт</h1>
+    <p class="auth-subtitle" th:text="#{register.client.subtitle}"></p>
+
+    <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
+
+    <form th:action="@{/client/register}" th:object="${form}" method="post">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div class="form-group">
+          <label class="form-label" th:text="#{register.label.firstname}">Имя</label>
+          <input class="form-input" type="text" th:field="*{firstName}" th:placeholder="#{register.label.firstname}" required/>
+        </div>
+        <div class="form-group">
+          <label class="form-label" th:text="#{register.label.lastname}">Фамилия</label>
+          <input class="form-input" type="text" th:field="*{lastName}" th:placeholder="#{register.label.lastname}" required/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" th:text="#{register.label.username}">Логин</label>
+        <input class="form-input" type="text" th:field="*{username}" th:placeholder="#{register.placeholder.username}" required/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" th:text="#{register.label.phone}">Телефон</label>
+        <input class="form-input" type="text" th:field="*{phoneNumber}" placeholder="+7 (999) 000-00-00"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" th:text="#{register.label.password}">Пароль</label>
+        <input class="form-input" type="password" th:field="*{password}" th:placeholder="#{register.placeholder.password}" required/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" th:text="#{register.label.confirm}">Подтвердите пароль</label>
+        <input class="form-input" type="password" th:field="*{confirmPassword}" th:placeholder="#{register.placeholder.confirm}" required/>
+      </div>
+      <button type="submit" class="btn btn-primary btn-full btn-lg" style="margin-top:8px;"
+              th:text="#{register.btn}" th:attr="data-loading=#{register.btn.loading}">Создать аккаунт</button>
+    </form>
+
+    <div class="auth-footer">
+      <span th:text="#{register.have.account}">Уже есть аккаунт?</span>
+      <a href="/login" th:text="#{register.signin}">Войти</a>
+    </div>
+  </div>
+</div>
+
+<script th:src="@{/js/app.js}"></script>
+</body>
+</html>
