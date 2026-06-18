@@ -1,13 +1,13 @@
 package alina.hurchyna.ah.driver.model;
 
 import jakarta.persistence.Entity;
-
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Setter
@@ -24,9 +24,9 @@ public class RideRequest {
     private String startLocation;
     private String destination;
     private RideStatus status;
-    @Getter
     private Long driverId;
     private String driverUsername;
+    private LocalDateTime rideDate;
 
     public RideRequest() {
 
@@ -61,4 +61,3 @@ public class RideRequest {
     }
 
 }
-
